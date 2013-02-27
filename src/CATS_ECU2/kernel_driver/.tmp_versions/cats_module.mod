@@ -1,0 +1,2 @@
+/usr/src/CATS_ECU2/kernel_driver/cats_module.ko
+/usr/src/CATS_ECU2/kernel_driver/cats_sja1000.o /usr/src/CATS_ECU2/kernel_driver/cats_can.o /usr/src/CATS_ECU2/kernel_driver/cats_flexray.o /usr/src/CATS_ECU2/kernel_driver/cats_adc.o /usr/src/CATS_ECU2/kernel_driver/cats_dac.o /usr/src/CATS_ECU2/kernel_driver/cats_pwm.o /usr/src/CATS_ECU2/kernel_driver/cats_gpio.o /usr/src/CATS_ECU2/kernel_driver/cats_powacc.o /usr/src/CATS_ECU2/kernel_driver/cats_callback.o /usr/src/CATS_ECU2/kernel_driver/cats_testmodule.o /usr/src/CATS_ECU2/kernel_driver/cats_fpga.o

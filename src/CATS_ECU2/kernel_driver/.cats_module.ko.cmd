@@ -1,0 +1,1 @@
+cmd_/usr/src/CATS_ECU2/kernel_driver/cats_module.ko := ld -r -m elf_i386  --build-id -o /usr/src/CATS_ECU2/kernel_driver/cats_module.ko /usr/src/CATS_ECU2/kernel_driver/cats_module.o /usr/src/CATS_ECU2/kernel_driver/cats_module.mod.o

@@ -1,0 +1,99 @@
+/***********************************************************
+
+ CHI-Header-File
+
+************************************************************
+
+ Filename:            C:\Documents and Settings\?? ??\My Documents\Ecu1_Controller1.chi
+ Projectfilename:     C:\Documents and Settings\?? ??\My Documents\FUJITSU.fpf
+ Nodename:            Ecu1_Controller1
+ Controller type:     Fujitsu MB88121
+ Date:                Friday, December 11, 2009
+ Revision:            3.2.0.0
+
+ Copyright Steinbeis GmbH & Co. KG f?r Technologietransfer
+ TransferZentrum Mikroelektronik
+
+************************************************************
+
+ Description:         FlexConfig 
+
+***********************************************************/
+
+SET_CONFIGMODE();
+
+CHECK_CTRL_TYPE(0x1001);
+
+WRITE32(0x00000000, 0x00000028); /* EILS */
+WRITE32(0x03037fff, 0x0000002c); /* SILS */
+WRITE32(0x00000000, 0x00000030); /* EIES */
+WRITE32(0x00000000, 0x00000038); /* SIES */
+WRITE32(0x00000003, 0x00000040); /* ILE */
+WRITE32(0x00000000, 0x00000044); /* T0C */
+WRITE32(0x00020000, 0x00000048); /* T1C */
+WRITE32(0x00000000, 0x0000004c); /* STPW */
+WRITE32(0x0400fb00, 0x00000080); /* SUCC1 */
+WRITE32(0x03013972, 0x00000084); /* SUCC2 */
+WRITE32(0x000000fa, 0x00000088); /* SUCC3 */
+WRITE32(0x00000000, 0x0000008c); /* NEMC */
+WRITE32(0x000000d8, 0x00000090); /* PRTC1 */
+WRITE32(0x00000000, 0x00000094); /* PRTC2 */
+WRITE32(0x00140002, 0x00000098); /* MHDC */
+WRITE32(0x00009c40, 0x000000a0); /* GTUC1 */
+WRITE32(0x000203e8, 0x000000a4); /* GTUC2 */
+WRITE32(0x03032424, 0x000000a8); /* GTUC3 */
+WRITE32(0x02570235, 0x000000ac); /* GTUC4 */
+WRITE32(0x2c010000, 0x000000b0); /* GTUC5 */
+WRITE32(0x007900cd, 0x000000b4); /* GTUC6 */
+WRITE32(0x000a0019, 0x000000b8); /* GTUC7 */
+WRITE32(0x009e0002, 0x000000bc); /* GTUC8 */
+WRITE32(0x00020101, 0x000000c0); /* GTUC9 */
+WRITE32(0x00280028, 0x000000c4); /* GTUC10 */
+WRITE32(0x00000000, 0x000000c8); /* GTUC11 */
+
+WRITE32(0x00030505, 0x00000300); /* MRC */
+WRITE32(0x00000000, 0x00000304); /* FRF */
+WRITE32(0x00000000, 0x00000308); /* FRFM */
+
+
+
+/* Tx Buffer 0 (Frame Id: 1, Payload length 2, FlexRayA, Base 0, Rep. 1)*/
+
+WAIT_TILL_CLEARED32(0x80000000, 0x00000514);
+WRITE32(0x15000001, 0x00000500); /* WRHS1 */
+WRITE32(0x000206b6, 0x00000504); /* WRHS2 */
+WRITE32(0x00000011, 0x00000508); /* WRHS3 */
+WRITE32(0x00000001, 0x00000510); /* IBCM */
+WRITE32(0x00000000, 0x00000514); /* IBCR */
+
+
+/* Rx Buffer 1 (Frame Id: 2, Payload length 2, FlexRayA, Base 0, Rep. 1)*/
+
+WAIT_TILL_CLEARED32(0x80000000, 0x00000514);
+WRITE32(0x21010002, 0x00000500); /* WRHS1 */
+WRITE32(0x00020000, 0x00000504); /* WRHS2 */
+WRITE32(0x00000012, 0x00000508); /* WRHS3 */
+WRITE32(0x00000001, 0x00000510); /* IBCM */
+WRITE32(0x00000001, 0x00000514); /* IBCR */
+
+
+/* Rx Buffer 2 (Frame Id: 8, Payload length 2, FlexRayA, Base 0, Rep. 1)*/
+
+WAIT_TILL_CLEARED32(0x80000000, 0x00000514);
+WRITE32(0x21010008, 0x00000500); /* WRHS1 */
+WRITE32(0x00020000, 0x00000504); /* WRHS2 */
+WRITE32(0x00000013, 0x00000508); /* WRHS3 */
+WRITE32(0x00000001, 0x00000510); /* IBCM */
+WRITE32(0x00000002, 0x00000514); /* IBCR */
+
+
+/* Tx Buffer 3 (Frame Id: 6, Payload length 2, FlexRayA, Base 0, Rep. 1)*/
+
+WAIT_TILL_CLEARED32(0x80000000, 0x00000514);
+WRITE32(0x15010006, 0x00000500); /* WRHS1 */
+WRITE32(0x0002045e, 0x00000504); /* WRHS2 */
+WRITE32(0x00000014, 0x00000508); /* WRHS3 */
+WRITE32(0x00000001, 0x00000510); /* IBCM */
+WRITE32(0x00000003, 0x00000514); /* IBCR */
+
+CONFIG_COMPLETE();
