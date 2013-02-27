@@ -1,0 +1,5 @@
+OPE-RA Version Information
+
+System Version        :v2.1.2      (2010.06.29 Release)
+FPGA Version          :v1.4.0      (2009.12.24 Release)
+Kernel Driver Version :v1.0.4      (2010.06.29 Release)
